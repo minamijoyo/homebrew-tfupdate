@@ -2,16 +2,16 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  version "0.4.3"
+  version "0.5.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/minamijoyo/tfupdate/releases/download/v0.4.3/tfupdate_0.4.3_darwin_amd64.tar.gz"
-    sha256 "51fd1b27ce6433ea9b734d7f7efe5d89c46d0fdc2579627daf99df2530eaa52c"
+    url "https://github.com/minamijoyo/tfupdate/releases/download/v0.5.0/tfupdate_0.5.0_darwin_amd64.tar.gz"
+    sha256 "b6ee91bda691d245ec6b493995ac135e6a5305adab14cdf5b2ec56a9399b58dc"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.4.3/tfupdate_0.4.3_linux_amd64.tar.gz"
-      sha256 "421deb487e406f3ea6ffe884d8fab74b36f1361714a5e90e7995f1d04f5f9b0d"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.5.0/tfupdate_0.5.0_linux_amd64.tar.gz"
+      sha256 "84cec240d8e45248a80f37977fb613c12cfd68b37a470eb06c90c365769d0a59"
     end
   end
 
