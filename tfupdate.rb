@@ -5,25 +5,28 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  version "0.6.1"
-  bottle :unneeded
+  version "0.6.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.6.1/tfupdate_0.6.1_darwin_amd64.tar.gz"
-      sha256 "5467e80c3028f6c90717ce57f6e2cf1e1f152b51cafa4c5e104cd14554287dde"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.6.2/tfupdate_0.6.2_darwin_amd64.tar.gz"
+      sha256 "8a4617cb134ab4375298a24bcb51aa4a87c4bcd6d3d7bb3e70afdd12ea28e1f4"
+
+      def install
+        bin.install "tfupdate"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.6.1/tfupdate_0.6.1_linux_amd64.tar.gz"
-      sha256 "6f49443a29441ebbd3cbd7b5452475b5a4075a4382bb2888f833a6f36a2b2766"
-    end
-  end
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.6.2/tfupdate_0.6.2_linux_amd64.tar.gz"
+      sha256 "6fe7363a341a6927fa05b585c01d75de16276238e592a3e733236b4c0189eb38"
 
-  def install
-    bin.install "tfupdate"
+      def install
+        bin.install "tfupdate"
+      end
+    end
   end
 
   test do
