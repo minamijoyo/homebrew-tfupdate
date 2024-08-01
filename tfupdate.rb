@@ -5,20 +5,20 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  version "0.8.2"
+  version "0.8.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.2/tfupdate_0.8.2_darwin_amd64.tar.gz"
-      sha256 "433113b20adbdf54d8acef8186aead2413137a8c6241922a4d188b6ffa75d112"
+    on_intel do
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.4/tfupdate_0.8.4_darwin_amd64.tar.gz"
+      sha256 "fc96f749b36d054f01308a4ed070e289ae6c574ba2b27b6e35eb9f8ba7c5ff14"
 
       def install
         bin.install "tfupdate"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.2/tfupdate_0.8.2_darwin_arm64.tar.gz"
-      sha256 "22aab4a90dc6ba0d68c18ba644a8e7289837575cfe715df7e88eb0b22ce2cf1b"
+    on_arm do
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.4/tfupdate_0.8.4_darwin_arm64.tar.gz"
+      sha256 "73c489451d52e67d19257c5c810f3c3e164f1210c8834dfb6b4deb615cd5fdc9"
 
       def install
         bin.install "tfupdate"
@@ -27,20 +27,24 @@ class Tfupdate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.2/tfupdate_0.8.2_linux_amd64.tar.gz"
-      sha256 "3f444f782bde21a77a0ad28ec961e9f2d15d7e89f7fef87519b753ecc2ee9f72"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.4/tfupdate_0.8.4_linux_amd64.tar.gz"
+        sha256 "1f1eb1d9849e5182732606a1f12a753413d3385450dacd38ff0100e26881d28a"
 
-      def install
-        bin.install "tfupdate"
+        def install
+          bin.install "tfupdate"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.2/tfupdate_0.8.2_linux_arm64.tar.gz"
-      sha256 "c9fac9740272a9a3f602b0bb4b0033665cf2f097c3f2c7c511799af5307435f3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/minamijoyo/tfupdate/releases/download/v0.8.4/tfupdate_0.8.4_linux_arm64.tar.gz"
+        sha256 "935c4b1898e1df5f5243166dfe3c2df165ace248b8858631ebd9366e9e63bf61"
 
-      def install
-        bin.install "tfupdate"
+        def install
+          bin.install "tfupdate"
+        end
       end
     end
   end
