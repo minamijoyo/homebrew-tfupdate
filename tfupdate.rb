@@ -5,20 +5,20 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform / OpenTofu configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  version "0.9.0"
+  version "0.9.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.0/tfupdate_0.9.0_darwin_amd64.tar.gz"
-      sha256 "7bf6ca5e3b3a4fd98427ace70c2e43c12affdc7fef583e0dd2e720acd2219035"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.1/tfupdate_0.9.1_darwin_amd64.tar.gz"
+      sha256 "b00de841f3d919203af629f2b5d346956d273712999ceeb7a7754a62257e2faa"
 
       def install
         bin.install "tfupdate"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.0/tfupdate_0.9.0_darwin_arm64.tar.gz"
-      sha256 "47268414e70b6fc502908cecaf2723f49f04455c679eac1731b04cca725c5136"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.1/tfupdate_0.9.1_darwin_arm64.tar.gz"
+      sha256 "8e69388da4bcfad96063367efec18581a02f3852dfeb61cac4056bf7dd788c2e"
 
       def install
         bin.install "tfupdate"
@@ -28,15 +28,15 @@ class Tfupdate < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.0/tfupdate_0.9.0_linux_amd64.tar.gz"
-      sha256 "aaad304ae7478013ccb4f76c40d185fc1b0dd5995772064474241fb5247343df"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.1/tfupdate_0.9.1_linux_amd64.tar.gz"
+      sha256 "17f6424afefa49692ca79c76dee11631d8e43ddfb241e93f0bc5ae9d3b53ec2a"
       def install
         bin.install "tfupdate"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.0/tfupdate_0.9.0_linux_arm64.tar.gz"
-      sha256 "d9df160394b4f48a1151570344f38ee4d6018f2456ea301512febc16a5af5926"
+      url "https://github.com/minamijoyo/tfupdate/releases/download/v0.9.1/tfupdate_0.9.1_linux_arm64.tar.gz"
+      sha256 "ba07081f83dab4e0af2059ceb299d6841a9e434842f8e5d6ef594f3517bb5096"
       def install
         bin.install "tfupdate"
       end
